@@ -1,0 +1,6 @@
+rootProject.name = 'base'
+include 'discovery'
+include 'gateway'
+include 'first-service'
+include 'second-service'
+

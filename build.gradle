@@ -1,0 +1,27 @@
+allprojects {
+    apply plugin: 'java'
+    group = 'com.example'
+    version = '1.0.0-SNAPSHOT-' + new Date().format("yyyyMMddHHmmss")
+    sourceCompatibility = '11'
+
+    defaultTasks 'clean', 'build'
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springCloudVersion = "Hoxton.SR12"
+    }
+
+    dependencies {
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
